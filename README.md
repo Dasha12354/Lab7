@@ -17,4 +17,9 @@ jQuery был крут в 2006–2015, но сегодня почти всё м�
 Для новых проектов — только Vanilla JS / React / Vue.  
 Но знать jQuery нужно — 70% сайтов до сих пор на нём!
 
-Скриншоты прилагаются.
+
+<img width="733" height="529" alt="image" src="https://github.com/user-attachments/assets/cf915351-181d-435d-910d-2fcbbaa82254" />
+
+<img width="1602" height="405" alt="image" src="https://github.com/user-attachments/assets/f7c5a3af-85f1-4433-9276-083fdfcdb867" />
+
+<img width="197" height="92" alt="image" src="https://github.com/user-attachments/assets/874ec916-894e-4393-ae89-0d2411ba7fc8" />
