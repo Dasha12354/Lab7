@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log("jQuery готов! Лаба 7 — огонь!");
 
   // Тёмная тема
   $('#themeToggle').click(function() {
@@ -15,15 +14,16 @@ $(document).ready(function() {
     $('#' + $(this).data('tab')).addClass('active');
   });
 
-  // Плавная прокрутка
+  // Плавная прокрутка (Задача B — обязательно!)
   $('nav a').click(function(e) {
     e.preventDefault();
+    const target = $($(this).attr('href'));
     $('html, body').animate({
-      scrollTop: $($(this).attr('href')).offset().top - 80
-    }, 800);
+      scrollTop: target.offset().top - 80
+    }, 900);
   });
 
-  // Цитаты — РАБОТАЕТ НА 100%
+  // AJAX — цитата
   $('#loadQuote').click(function() {
     $.get('https://api.quotable.io/random')
       .done(function(data) {
@@ -35,27 +35,25 @@ $(document).ready(function() {
         });
       })
       .fail(function() {
-        $('#quote-text').text('Ошибка загрузки...');
+        $('#quote-text').text('Не удалось загрузить цитату');
       });
   });
 
-  // Галерея — 12 красивых фото
-  const images = [];
+  // Галерея — 12 фоток
   for (let i = 1; i <= 12; i++) {
-    images.push(`https://picsum.photos/600/400?random=${i}`);
+    $('<img>').attr('src', `https://picsum.photos/600/400?random=${i}`)
+              .appendTo('#photoGallery');
   }
-  images.forEach(src => {
-    $('<img>').attr('src', src).appendTo('#gallery');
-  });
 
   // jQuery UI
   $('#draggable').draggable();
   $('#datepicker').datepicker({
     dateFormat: 'dd.mm.yy',
     changeMonth: true,
-    changeYear: true
+    changeYear: true,
+    yearRange: "1950:2025"
   });
 
-  // Загрузить цитату при старте
+  // Автозагрузка цитаты
   $('#loadQuote').click();
 });
