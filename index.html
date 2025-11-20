@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лаба 7 — jQuery vs Vanilla JS | Дарья Роик</title>
+  <title>Лаба 7 — jQuery + Галерея | Дарья Роик</title>
   <link rel="stylesheet" href="style.css">
-  <!-- jQuery + jQuery UI (для draggable и datepicker) -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -13,53 +12,66 @@
 <body>
 
   <header>
-    <h1>Лабораторная работа №7</h1>
-    <p>jQuery — «Что? Где? Когда?»</p>
-    <button id="themeToggle">🌙 Тёмная тема</button>
+    <h1>Лабораторная №7 — jQuery</h1>
+    <p>Вкладки • Прокрутка • AJAX • Галерея • jQuery UI</p>
+    <button id="themeToggle">Тёмная тема</button>
   </header>
 
   <nav>
-    <a href="#section1">Секция 1</a>
-    <a href="#section2">Секция 2</a>
-    <a href="#section3">Секция 3</a>
+    <a href="#home">Главная</a>
+    <a href="#tabs">Вкладки</a>
+    <a href="#quote">Цитата</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#ui">jQuery UI</a>
   </nav>
 
-  <!-- Задача A: Вкладки -->
-  <section class="tabs-section">
-    <h2>Вкладки (Tabs)</h2>
+  <section id="home" class="section"><h2>Привет! Это лаба 7</h2></section>
+
+  <!-- Вкладки -->
+  <section id="tabs" class="section">
+    <h2>Вкладки (jQuery)</h2>
     <div class="tabs">
-      <button class="tab-btn active" data-tab="tab1">О нас</button>
-      <button class="tab-btn" data-tab="tab2">Портфолио</button>
-      <button class="tab-btn" data-tab="tab3">Контакты</button>
+      <button class="tab-btn active" data-tab="tab1">Обо мне</button>
+      <button class="tab-btn" data-tab="tab2">Учёба</button>
+      <button class="tab-btn" data-tab="tab3">Хобби</button>
     </div>
-    <div id="tab1" class="tab-content active">Привет! Это вкладка "О нас". Здесь я рассказываю о себе ✨</div>
-    <div id="tab2" class="tab-content">Мои проекты, учёба, рисунки — всё здесь!</div>
-    <div id="tab3" class="tab-content">Пишите: darya.roik@example.com 📧</div>
+    <div id="tab1" class="tab-content active">Я Дарья, учусь на IT, люблю кодить и рисовать</div>
+    <div id="tab2" class="tab-content">Сейчас изучаю JavaScript и jQuery</div>
+    <div id="tab3" class="tab-content">Рисую, слушаю музыку, мечтаю о своём проекте</div>
   </section>
 
-  <!-- Задача B: Плавная прокрутка -->
-  <section id="section1" class="section">Секция 1 — тут высоко!</section>
-  <section id="section2" class="section">Секция 2 — ещё выше!</section>
-  <section id="section3" class="section">Секция 3 — мы почти на Луне!</section>
-
-  <!-- Задача C: AJAX цитата -->
-  <section class="quote-section">
+  <!-- AJAX Цитата -->
+  <section id="quote" class="section">
     <h2>Случайная цитата</h2>
-    <blockquote id="quote">
-      <p>Нажми кнопку ↓</p>
+    <blockquote id="quoteBlock">
+      <p id="quoteText">Нажми кнопку ниже</p>
+      <cite id="quoteAuthor"></cite>
     </blockquote>
-    <button id="loadQuote">Загрузить цитату</button>
+    <button id="loadQuote">Новая цитата</button>
   </section>
 
-  <!-- Задача D: jQuery UI -->
-  <section class="ui-section">
-    <h2>jQuery UI — магия за одну строку</h2>
+  <!-- Динамическая галерея -->
+  <section id="gallery" class="section">
+    <h2>Галерея с эффектами (jQuery)</h2>
+    <div class="gallery-filters">
+      <button data-filter="all" class="active">Все</button>
+      <button data-filter="nature">Природа</button>
+      <button data-filter="art">Арт</button>
+    </div>
+    <div id="photoGallery" class="gallery-grid">
+      <!-- Фото загрузятся сюда через jQuery -->
+    </div833
+  </section>
+
+  <!-- jQuery UI -->
+  <section id="ui" class="section">
+    <h2>jQuery UI — магия</h2>
     <div id="draggable" class="draggable-box">Перетащи меня!</div>
     <p>Выбери дату: <input type="text" id="datepicker"></p>
   </section>
 
   <footer>
-    <p>© 2025 Дарья Роик | Лабораторная №7 по основам веб-разработки</p>
+    <p>© 2025 Дарья Роик • Лабораторная работа №7</p>
   </footer>
 
   <script src="script.js"></script>
