@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("jQuery запущен! Лаба 7 работает!");
+  console.log("jQuery готов! Лаба 7 — огонь!");
 
   // Тёмная тема
   $('#themeToggle').click(function() {
@@ -18,62 +18,34 @@ $(document).ready(function() {
   // Плавная прокрутка
   $('nav a').click(function(e) {
     e.preventDefault();
-    const target = $($(this).attr('href'));
     $('html, body').animate({
-      scrollTop: target.offset().top - 80
+      scrollTop: $($(this).attr('href')).offset().top - 80
     }, 800);
   });
 
-  // AJAX — цитата (работает 100%)
+  // Цитаты — РАБОТАЕТ НА 100%
   $('#loadQuote').click(function() {
     $.get('https://api.quotable.io/random')
       .done(function(data) {
-        $('#quoteText').text('«' + data.content + '»').hide().fadeIn(800);
-        $('#quoteAuthor').text('— ' + data.author).hide().fadeIn(1200);
+        $('#quote-text').fadeOut(300, function() {
+          $(this).text('«' + data.content + '»').fadeIn(600);
+        });
+        $('#quote-author').fadeOut(300, function() {
+          $(this).text('— ' + data.author).fadeIn(800);
+        });
       })
       .fail(function() {
-        $('#quoteText').text('Ошибка загрузки... Попробуй ещё раз');
+        $('#quote-text').text('Ошибка загрузки...');
       });
   });
 
-  // Динамическая галерея (12 красивых фото)
-  const photos = [
-    {url: "https://picsum.photos/400/300?random=1", category: "nature"},
-    {url: "https://picsum.photos/400/300?random=2", category: "art"},
-    {url: "https://picsum.photos/400/300?random=3", category: "nature"},
-    {url: "https://picsum.photos/400/300?random=4", category: "art"},
-    {url: "https://picsum.photos/400/300?random=5", category: "nature"},
-    {url: "https://picsum.photos/400/300?random=6", category: "art"},
-    {url: "https://picsum.photos/400/300?random=7", category: "nature"},
-    {url: "https://picsum.photos/400/300?random=8", category: "art"},
-    {url: "https://picsum.photos/400/300?random=9", category: "nature"},
-    {url: "https://picsum.photos/400/300?random=10", category: "art"},
-    {url: "https://picsum.photos/400/300?random=11", category: "nature"},
-    {url: "https://picsum.photos/400/300?random=12", category: "art"}
-  ];
-
-  photos.forEach(photo => {
-    const img = $('<img>').attr('src', photo.url).attr('data-category', photo.category);
-    $('#photoGallery').append(img);
-  });
-
-  // Фильтры галереи
-  $('.gallery-filters button').click(function() {
-    $('.gallery-filters button').removeClass('active');
-    $(this).addClass('active');
-    const filter = $(this).data('filter');
-
-    if (filter === 'all') {
-      $('#photoGallery img').fadeIn(500);
-    } else {
-      $('#photoGallery img').each(function() {
-        if ($(this).data('category') === filter) {
-          $(this).fadeIn(500);
-        } else {
-          $(this).fadeOut(500);
-        }
-      });
-    }
+  // Галерея — 12 красивых фото
+  const images = [];
+  for (let i = 1; i <= 12; i++) {
+    images.push(`https://picsum.photos/600/400?random=${i}`);
+  }
+  images.forEach(src => {
+    $('<img>').attr('src', src).appendTo('#gallery');
   });
 
   // jQuery UI
