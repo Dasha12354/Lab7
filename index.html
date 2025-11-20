@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лаба 7 • jQuery • Дарья Роик</title>
+  <title>Блог обо мне</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
@@ -12,8 +12,8 @@
 <body>
 
   <header>
-    <h1>Лабораторная работа №7</h1>
-    <p>jQuery + AJAX + jQuery UI</p>
+    <h1>Блог обо мне</h1>
+    <p>Учусь в сфере IT и делюсь своими интересами и идеями</p>
     <button id="themeToggle">Тёмная тема</button>
   </header>
 
@@ -26,12 +26,13 @@
   </nav>
 
   <!-- Главная -->
-  <section id="home" class="section">
-    <h2>Добро пожаловать!</h2>
-    <p>Лабораторная работа №7 по дисциплине "Основы веб-разработки с применением ИИ-ассистентов"</p>
-    <p>Студентка: Дарья Роик</p>
-    <p>Преподаватель: Бричаг Д.В.</p>
-  </section>
+  <div class="welcome-card">
+  <h2>Добро пожаловать в мой блог!</h2>
+  <p>
+    Я изучаю IT и программирование, люблю создавать сайты и изучать новые технологии.<br>
+    Сейчас работаю над проектом для учёбы — это помогает развивать логику и внимательность.
+  </p>
+</div>
 
   <!-- Вкладки (Задача A) -->
   <section id="tabs" class="section">
@@ -41,19 +42,18 @@
       <button class="tab-btn" data-tab="tab2">Учёба</button>
       <button class="tab-btn" data-tab="tab3">Хобби</button>
     </div>
-    <div id="tab1" class="tab-content active">Я — Дарья, учусь на IT-специалиста</div>
-    <div id="tab2" class="tab-content">Изучаю JavaScript, jQuery, React</div>
-    <div id="tab3" class="tab-content">Рисую, слушаю музыку, гуляю с собакой</div>
+    <div id="tab1" class="tab-content active">Меня зовут Дарья, мне нравится учиться новому, особенно в IT. Люблю порядок, красоту и когда всё работает как надо</div>
+    <div id="tab2" class="tab-content">Сейчас изучаю JavaScript, jQuery, учусь работать с API, делаю свои первые проекты</div>
+    <div id="tab3" class="tab-content">В свободное время я рисую, слушаю музыку и читаю книги. Также мне интересно пробовать себя в дизайне и создании визуальных проектов.</div>
   </section>
 
   <!-- AJAX цитата (Задача C) -->
-  <section id="ajax" class="section">
-    <h2>AJAX — случайная цитата</h2>
-    <blockquote id="quote">
-      <p id="quote-text">Нажми кнопку ниже</p>
-      <cite id="quote-author"></cite>
-    </blockquote>
-    <button id="loadQuote">Загрузить цитату</button>
+  <<section id="ajax" class="section">
+    <h2 class="section-title">Цитата дня</h2>
+    <div class="quote-card card" id="reviews">
+      <p class="placeholder">Нажми кнопку ниже, и появится вдохновение</p>
+    </div>
+    <button id="newReviewsBtn" class="btn-primary">Новая цитата</button>
   </section>
 
   <!-- Галерея с эффектами (бонус) -->
@@ -66,7 +66,7 @@
   <section id="ui" class="section">
     <h2>jQuery UI</h2>
     <div id="draggable" class="draggable-box">Перетаскивай меня!</div>
-    <p>Выбери дату рождения: <input type="text" id="datepicker"></p>
+    <p>Выбери дату : <input type="text" id="datepicker"></p>
   </section>
 
   <footer>
