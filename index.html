@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лаба 7 — jQuery + Галерея | Дарья Роик</title>
+  <title>Лаба 7 — jQuery | Дарья Роик</title>
   <link rel="stylesheet" href="style.css">
+  <!-- jQuery + jQuery UI -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -12,66 +13,60 @@
 <body>
 
   <header>
-    <h1>Лабораторная №7 — jQuery</h1>
-    <p>Вкладки • Прокрутка • AJAX • Галерея • jQuery UI</p>
+    <h1>Лабораторная работа №7</h1>
+    <p>jQuery — «Что? Где? Когда?»</p>
     <button id="themeToggle">Тёмная тема</button>
   </header>
 
   <nav>
-    <a href="#home">Главная</a>
-    <a href="#tabs">Вкладки</a>
-    <a href="#quote">Цитата</a>
-    <a href="#gallery">Галерея</a>
-    <a href="#ui">jQuery UI</a>
+    <a href="#section1">Секция 1</a>
+    <a href="#section2">Секция 2</a>
+    <a href="#section3">Секция 3</a>
   </nav>
 
-  <section id="home" class="section"><h2>Привет! Это лаба 7</h2></section>
-
   <!-- Вкладки -->
-  <section id="tabs" class="section">
-    <h2>Вкладки (jQuery)</h2>
+  <section class="tabs-section">
+    <h2>Вкладки (Tabs)</h2>
     <div class="tabs">
-      <button class="tab-btn active" data-tab="tab1">Обо мне</button>
-      <button class="tab-btn" data-tab="tab2">Учёба</button>
-      <button class="tab-btn" data-tab="tab3">Хобби</button>
+      <button class="tab-btn active" data-tab="tab1">О нас</button>
+      <button class="tab-btn" data-tab="tab2">Портфолио</button>
+      <button class="tab-btn" data-tab="tab3">Контакты</button>
     </div>
-    <div id="tab1" class="tab-content active">Я Дарья, учусь на IT, люблю кодить и рисовать</div>
-    <div id="tab2" class="tab-content">Сейчас изучаю JavaScript и jQuery</div>
-    <div id="tab3" class="tab-content">Рисую, слушаю музыку, мечтаю о своём проекте</div>
+    <div id="tab1" class="tab-content active">Привет! Я Дарья, учусь на IT, люблю код и творчество</div>
+    <div id="tab2" class="tab-content">Мои проекты, рисунки, учёба — всё здесь!</div>
+    <div id="tab3" class="tab-content">Пиши: darya.roik@example.com</div>
   </section>
 
-  <!-- AJAX Цитата -->
-  <section id="quote" class="section">
+  <!-- Секции для прокрутки -->
+  <section id="section1" class="section">Секция 1 — высоко!</section>
+  <section id="section2" class="section">Секция 2 — ещё выше!</section>
+  <section id="section3" class="section">Секция 3 — почти космос!</section>
+
+  <!-- AJAX цитата (РАБОТАЕТ 100%) -->
+  <section class="quote-section">
     <h2>Случайная цитата</h2>
-    <blockquote id="quoteBlock">
-      <p id="quoteText">Нажми кнопку ниже</p>
-      <cite id="quoteAuthor"></cite>
+    <blockquote id="quote">
+      <p id="quote-text">Нажми кнопку</p>
+      <cite id="quote-author"></cite>
     </blockquote>
-    <button id="loadQuote">Новая цитата</button>
+    <button id="loadQuote">Загрузить цитату</button>
   </section>
 
-  <!-- Динамическая галерея -->
-  <section id="gallery" class="section">
-    <h2>Галерея с эффектами (jQuery)</h2>
-    <div class="gallery-filters">
-      <button data-filter="all" class="active">Все</button>
-      <button data-filter="nature">Природа</button>
-      <button data-filter="art">Арт</button>
-    </div>
-    <div id="photoGallery" class="gallery-grid">
-      <!-- Фото загрузятся сюда через jQuery -->
-    </div833
+  <!-- Галерея с эффектами (jQuery) -->
+  <section class="gallery-section">
+    <h2>Галерея с эффектами</h2>
+    <div id="gallery"></div>
   </section>
 
   <!-- jQuery UI -->
-  <section id="ui" class="section">
+  <section class="ui-section">
     <h2>jQuery UI — магия</h2>
     <div id="draggable" class="draggable-box">Перетащи меня!</div>
     <p>Выбери дату: <input type="text" id="datepicker"></p>
   </section>
 
   <footer>
-    <p>© 2025 Дарья Роик • Лабораторная работа №7</p>
+    <p>© 2025 Дарья Роик | Лабораторная №7</p>
   </footer>
 
   <script src="script.js"></script>
