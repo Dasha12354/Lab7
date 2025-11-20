@@ -24,20 +24,27 @@ $(document).ready(function() {
   });
 
   // AJAX — цитата
-  $('#loadQuote').click(function() {
-    $.get('https://api.quotable.io/random')
-      .done(function(data) {
-        $('#quote-text').fadeOut(300, function() {
-          $(this).text('«' + data.content + '»').fadeIn(600);
-        });
-        $('#quote-author').fadeOut(300, function() {
-          $(this).text('— ' + data.author).fadeIn(800);
-        });
-      })
-      .fail(function() {
-        $('#quote-text').text('Не удалось загрузить цитату');
-      });
-  });
+  const reviewBox = $("#reviews");
+  const newReviewsBtn = $("#newReviewsBtn");
+
+  async function loadReview() {
+    reviewBox.html("Загрузка...").fadeIn();
+    try {
+      const res = await fetch("https://dummyjson.com/quotes/random");
+      const data = await res.json();
+      reviewBox.html(`
+        <p style="font-size:22px; font-style:italic; margin:20px 0;">
+          "${data.quote}"
+        </p>
+        <p style="text-align:right; font-weight:bold;">— ${data.author}</p>
+      `).hide().fadeIn(800);
+    } catch {
+      reviewBox.html("Ошибка загрузки...").css("color", "red");
+    }
+  }
+
+  newReviewsBtn.on('click', loadReview);
+  loadReview();
 
   // Галерея — 12 фоток
   for (let i = 1; i <= 12; i++) {
