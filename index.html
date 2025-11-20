@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лаба 7 — jQuery | Дарья Роик</title>
+  <title>Лаба 7 • jQuery • Дарья Роик</title>
   <link rel="stylesheet" href="style.css">
-  <!-- jQuery + jQuery UI -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -14,59 +13,64 @@
 
   <header>
     <h1>Лабораторная работа №7</h1>
-    <p>jQuery — «Что? Где? Когда?»</p>
+    <p>jQuery + AJAX + jQuery UI</p>
     <button id="themeToggle">Тёмная тема</button>
   </header>
 
   <nav>
-    <a href="#section1">Секция 1</a>
-    <a href="#section2">Секция 2</a>
-    <a href="#section3">Секция 3</a>
+    <a href="#home">Главная</a>
+    <a href="#tabs">Вкладки</a>
+    <a href="#ajax">Цитата</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#ui">jQuery UI</a>
   </nav>
 
-  <!-- Вкладки -->
-  <section class="tabs-section">
-    <h2>Вкладки (Tabs)</h2>
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="tab1">О нас</button>
-      <button class="tab-btn" data-tab="tab2">Портфолио</button>
-      <button class="tab-btn" data-tab="tab3">Контакты</button>
-    </div>
-    <div id="tab1" class="tab-content active">Привет! Я Дарья, учусь на IT, люблю код и творчество</div>
-    <div id="tab2" class="tab-content">Мои проекты, рисунки, учёба — всё здесь!</div>
-    <div id="tab3" class="tab-content">Пиши: darya.roik@example.com</div>
+  <!-- Главная -->
+  <section id="home" class="section">
+    <h2>Добро пожаловать!</h2>
+    <p>Лабораторная работа №7 по дисциплине "Основы веб-разработки с применением ИИ-ассистентов"</p>
+    <p>Студентка: Дарья Роик</p>
+    <p>Преподаватель: Бричаг Д.В.</p>
   </section>
 
-  <!-- Секции для прокрутки -->
-  <section id="section1" class="section">Секция 1 — высоко!</section>
-  <section id="section2" class="section">Секция 2 — ещё выше!</section>
-  <section id="section3" class="section">Секция 3 — почти космос!</section>
+  <!-- Вкладки (Задача A) -->
+  <section id="tabs" class="section">
+    <h2>Вкладки (jQuery)</h2>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab1">Обо мне</button>
+      <button class="tab-btn" data-tab="tab2">Учёба</button>
+      <button class="tab-btn" data-tab="tab3">Хобби</button>
+    </div>
+    <div id="tab1" class="tab-content active">Я — Дарья, учусь на IT-специалиста</div>
+    <div id="tab2" class="tab-content">Изучаю JavaScript, jQuery, React</div>
+    <div id="tab3" class="tab-content">Рисую, слушаю музыку, гуляю с собакой</div>
+  </section>
 
-  <!-- AJAX цитата (РАБОТАЕТ 100%) -->
-  <section class="quote-section">
-    <h2>Случайная цитата</h2>
+  <!-- AJAX цитата (Задача C) -->
+  <section id="ajax" class="section">
+    <h2>AJAX — случайная цитата</h2>
     <blockquote id="quote">
-      <p id="quote-text">Нажми кнопку</p>
+      <p id="quote-text">Нажми кнопку ниже</p>
       <cite id="quote-author"></cite>
     </blockquote>
     <button id="loadQuote">Загрузить цитату</button>
   </section>
 
-  <!-- Галерея с эффектами (jQuery) -->
-  <section class="gallery-section">
+  <!-- Галерея с эффектами (бонус) -->
+  <section id="gallery" class="section">
     <h2>Галерея с эффектами</h2>
-    <div id="gallery"></div>
+    <div id="photoGallery"></div>
   </section>
 
-  <!-- jQuery UI -->
-  <section class="ui-section">
-    <h2>jQuery UI — магия</h2>
-    <div id="draggable" class="draggable-box">Перетащи меня!</div>
-    <p>Выбери дату: <input type="text" id="datepicker"></p>
+  <!-- jQuery UI (Задача D) -->
+  <section id="ui" class="section">
+    <h2>jQuery UI</h2>
+    <div id="draggable" class="draggable-box">Перетаскивай меня!</div>
+    <p>Выбери дату рождения: <input type="text" id="datepicker"></p>
   </section>
 
   <footer>
-    <p>© 2025 Дарья Роик | Лабораторная №7</p>
+    <p>© 2025 Дарья Роик • Приднестровский государственный университет</p>
   </footer>
 
   <script src="script.js"></script>
